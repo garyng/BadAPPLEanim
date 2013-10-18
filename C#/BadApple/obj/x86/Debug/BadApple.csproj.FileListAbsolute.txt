@@ -9,3 +9,11 @@ D:\Documents and Settings\GaryNg\Desktop\Git\BadAppleAnim\C#\BadApple\BadApple\o
 D:\Documents and Settings\GaryNg\Desktop\Git\BadAppleAnim\C#\BadApple\BadApple\obj\x86\Debug\BadApple.pdb
 D:\Documents and Settings\GaryNg\Desktop\Git\BadAppleAnim\C#\BadApple\obj\x86\Debug\BadApple.exe
 D:\Documents and Settings\GaryNg\Desktop\Git\BadAppleAnim\C#\BadApple\obj\x86\Debug\BadApple.pdb
+D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.exe
+D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.pdb
+D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\bin\Debug\BadApple.exe
+D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\bin\Debug\BadApple.pdb
+D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.csprojResolveAssemblyReference.cache
+D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.frmSetup.resources
+D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.Properties.Resources.resources
+D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.csproj.GenerateResource.Cache
