@@ -105,5 +105,86 @@ namespace BadApple
 			WHITENESS = 0x00FF0062,
 			CAPTUREBLT = 0x40000000 //only if WinVer >= 5.0.0 (see wingdi.h)
 		}
+
+		public const int WM_NCLBUTTONDOWN = 0xA1;
+		public const int HT_CAPTION = 0x2;
+
+		[DllImportAttribute("user32.dll")]
+		public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+		[DllImportAttribute("user32.dll")]
+		public static extern bool ReleaseCapture();
+
+		[StructLayout(LayoutKind.Sequential)]
+		public struct Point
+		{
+			public int X;
+			public int Y;
+
+			public Point(int x, int y)
+			{
+				this.X = x;
+				this.Y = y;
+			}
+
+			public Point(System.Drawing.Point pt) : this(pt.X, pt.Y) { }
+
+			public static implicit operator System.Drawing.Point(Point p)
+			{
+				return new System.Drawing.Point(p.X, p.Y);
+			}
+
+			public static implicit operator Point(System.Drawing.Point p)
+			{
+				return new Point(p.X, p.Y);
+			}
+		}
+
+		[StructLayout(LayoutKind.Sequential)]
+		public struct Size
+		{
+			public int cx;
+			public int cy;
+
+			public Size(int cx, int cy)
+			{
+				this.cx = cx;
+				this.cy = cy;
+			}
+		}
+
+		[StructLayout(LayoutKind.Sequential)]
+		public struct BlendFunction
+		{
+			public byte BlendOp;
+			public byte BlendFlags;
+			public byte SourceConstantAlpha;
+			public byte AlphaFormat;
+
+			public BlendFunction(byte op, byte flags, byte alpha, byte format)
+			{
+				BlendOp = op;
+				BlendFlags = flags;
+				SourceConstantAlpha = alpha;
+				AlphaFormat = format;
+			}
+		}
+
+		public const int WS_EX_LAYERED = 0x00080000;
+		public const uint ULW_ALPHA = 2;
+		public const byte AC_SRC_OVER = 0;
+		public const byte AC_SRC_ALPHA = 1;
+
+
+		[DllImport("user32.dll", ExactSpelling = true, SetLastError = true)]
+		public static extern bool UpdateLayeredWindow(IntPtr hwnd, IntPtr hdcDst,
+		   ref Point pptDst, ref Size psize, IntPtr hdcSrc, ref Point pptSrc, uint crKey,
+		   [In] ref BlendFunction pblend, uint dwFlags);
+
+		[DllImport("user32.dll")]
+		public static extern IntPtr GetDC(IntPtr hWnd);
+
+		[DllImport("user32.dll")]
+		public static extern bool ReleaseDC(IntPtr hWnd, IntPtr hDC);
+
 	}
 }

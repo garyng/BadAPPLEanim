@@ -122,14 +122,14 @@ namespace BadApple
 			}
 			if (!Publics.BGM.Open(txtPath.Text))
 			{
-				MessageBox.Show("Not a valid BGM file");
-				return;
+				MessageBox.Show("Not a valid BGM file" + Environment.NewLine + "Continue without BGM");
 			}
 
 			if (rbLayered.Checked)
 			{
 				MessageBox.Show("Press Esc to exit");
-				//TODO: layer form
+				frmLayered frm = new frmLayered();
+				frm.Show();
 			}
 			else
 			{

@@ -68,7 +68,6 @@ namespace BadApple
 					{
 						using (Graphics g = this.CreateGraphics())
 						{
-
 							_imgIndex = (int)Math.Floor(_sw.ElapsedMilliseconds / 33.2);
 							if (_imgIndex >= 6569)
 							{

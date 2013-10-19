@@ -60,8 +60,8 @@ Public Class baShared
 	'Layered Window code
 
 	Public Const WS_EX_LAYERED As Int32 = &H80000
-	Public Const HTCAPTION As Int32 = &H2
-	Public Const WM_NCHITTEST As Int32 = &H84
+	'Public Const HTCAPTION As Int32 = &H2
+	'Public Const WM_NCHITTEST As Int32 = &H84
 	Public Const ULW_ALPHA As Int32 = &H2
 	Public Const AC_SRC_OVER As Byte = &H0
 	Public Const AC_SRC_ALPHA As Byte = &H1

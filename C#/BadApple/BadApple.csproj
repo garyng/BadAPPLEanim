@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmLayered.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLayered.Designer.cs">
+      <DependentUpon>frmLayered.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSetup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Publics.cs" />
     <Compile Include="SSPReader.cs" />
     <Compile Include="Win32API.cs" />
+    <EmbeddedResource Include="frmLayered.resx">
+      <DependentUpon>frmLayered.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSetup.resx">
       <DependentUpon>frmSetup.cs</DependentUpon>
     </EmbeddedResource>
