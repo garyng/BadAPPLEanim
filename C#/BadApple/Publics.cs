@@ -10,6 +10,12 @@ namespace BadApple
 	public static class Publics
 	{
 		public static MCIMedia BGM = new MCIMedia("baBGM");
+		public static bool useBitBlt;
+		public static bool isFullscreen;
+		public static bool showTaskbar;
+		public static bool isBackTrans;
+		public static bool isTopMost;
+		public static SSPReader sspReader;
 
 		public static string OpenFile(string Title, string FileName, string Filter)
 		{
@@ -42,6 +48,18 @@ namespace BadApple
 			}
 			Win32API.SHGetFileInfo(FileName, (uint)256, ref fileInfo, (uint)szFileInfo, (uint)flags);
 			return Icon.FromHandle(fileInfo.hIcon);
+		}
+
+		public static Image GetFrame(int index)
+		{
+			if (index <= 40 || index > 6512)
+			{
+				return sspReader.Get(0);
+			}
+			else
+			{
+				return sspReader.Get(index - 40);
+			}
 		}
 
 	}

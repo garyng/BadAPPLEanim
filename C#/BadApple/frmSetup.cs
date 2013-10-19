@@ -53,10 +53,19 @@ namespace BadApple
 		private void lnkSSP_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			string filename = Publics.OpenFile("Select SSP file for Bad Apple", "ba.ssp", "SSP|*.ssp");
+
 			if (filename != "")
 			{
+				try
+				{
+					SSPReader ssp = new SSPReader(filename);
+				}
+				catch (InvalidSSPException ex)
+				{
+					MessageBox.Show(ex.Message);
+					return;
+				}
 				txtSSP.Text = filename;
-				//TODO: check invalid
 			}
 		}
 
@@ -66,25 +75,68 @@ namespace BadApple
 			{
 				Publics.BGM.PlayFrom0();
 				Win32API.AllocConsole();
-				new Thread(delegate() {
+				Console.WindowHeight = 1;
+				Console.BufferHeight = 1;
+				Console.Title = "Playing status";
+				Thread bgmState = new Thread(delegate()
+				{
 					while (true)
 					{
 						this.Invoke((MethodInvoker)delegate()
 						{
 							Console.CursorLeft = 0;
 							Console.CursorTop = 0;
-							Console.Write(Publics.BGM.Position());
+							Console.Write(TimeSpan.FromMilliseconds(Publics.BGM.Position()).ToString() + " / " + TimeSpan.FromMilliseconds(Publics.BGM.Length()).ToString());
 						});
-						Thread.Sleep(1000);
+						Thread.Sleep(500);
 					}
-				}) { IsBackground = true }.Start();
+				}) { IsBackground = true };
+				bgmState.Start();
 				MessageBox.Show("BGM playing..." + Environment.NewLine + "Press OK to stop", "Playing", MessageBoxButtons.OK);
+				bgmState.Abort();
+				Win32API.FreeConsole();
 				Publics.BGM.Close();
 			}
 			else
 			{
 				MessageBox.Show("Failed to open BGM file","Failed",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
 			}
+		}
+
+		private void btnStart_Click(object sender, EventArgs e)
+		{
+			Publics.useBitBlt = cbBitBlt.Checked;
+			Publics.isFullscreen = cbFullScr.Checked;
+			Publics.showTaskbar = cbShowTskBar.Checked;
+			Publics.isBackTrans = cbTransBack.Checked;
+			Publics.isTopMost = cbOnTop.Checked;
+
+			try
+			{
+				Publics.sspReader = new SSPReader(txtSSP.Text);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Not a valid SSP file");
+				return;
+			}
+			if (!Publics.BGM.Open(txtPath.Text))
+			{
+				MessageBox.Show("Not a valid BGM file");
+				return;
+			}
+
+			if (rbLayered.Checked)
+			{
+				MessageBox.Show("Press Esc to exit");
+				//TODO: layer form
+			}
+			else
+			{
+				frmStandard frm = new frmStandard();
+				frm.Show();
+			}
+			this.Hide();
 		}
 	}
 }

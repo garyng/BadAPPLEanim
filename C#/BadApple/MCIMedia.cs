@@ -49,7 +49,7 @@ namespace BadApple
 			}
 			return false;
 		}
-		private bool Pause()
+		public bool Pause()
 		{
 			if (Win32API.mciSendString("pause " + this.Alias, new StringBuilder(), 256, IntPtr.Zero) == 0)
 			{
@@ -65,6 +65,16 @@ namespace BadApple
 				return int.Parse(pos.ToString());
 			}
 			return -1;
+		}
+		
+		public int Length()
+		{
+			StringBuilder len = new StringBuilder();
+			if (Win32API.mciSendString("status " + this.Alias + " length ", len, len.Capacity, IntPtr.Zero) == 0)
+			{
+				return int.Parse(len.ToString());
+			}
+			return 0;
 		}
 	}
 }

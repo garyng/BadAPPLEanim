@@ -38,12 +38,13 @@
 			this.cbFullScr = new System.Windows.Forms.CheckBox();
 			this.cbShowTskBar = new System.Windows.Forms.CheckBox();
 			this.txtPath = new System.Windows.Forms.TextBox();
-			this.lblBGM = new System.Windows.Forms.Label();
 			this.lnkBrowse = new System.Windows.Forms.LinkLabel();
 			this.lnkTest = new System.Windows.Forms.LinkLabel();
 			this.btnStart = new System.Windows.Forms.Button();
 			this.txtSSP = new System.Windows.Forms.TextBox();
 			this.lnkSSP = new System.Windows.Forms.LinkLabel();
+			this.label1 = new System.Windows.Forms.Label();
+			this.lblBGM = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// rbWindowed
@@ -169,22 +170,11 @@
 			this.txtPath.BackColor = System.Drawing.Color.Black;
 			this.txtPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.txtPath.ForeColor = System.Drawing.Color.White;
-			this.txtPath.Location = new System.Drawing.Point(117, 296);
+			this.txtPath.Location = new System.Drawing.Point(162, 296);
 			this.txtPath.Name = "txtPath";
-			this.txtPath.Size = new System.Drawing.Size(180, 22);
+			this.txtPath.Size = new System.Drawing.Size(135, 22);
 			this.txtPath.TabIndex = 13;
 			this.txtPath.Text = "\\ba.mp3";
-			// 
-			// lblBGM
-			// 
-			this.lblBGM.AutoSize = true;
-			this.lblBGM.BackColor = System.Drawing.Color.Transparent;
-			this.lblBGM.ForeColor = System.Drawing.Color.White;
-			this.lblBGM.Location = new System.Drawing.Point(230, 270);
-			this.lblBGM.Name = "lblBGM";
-			this.lblBGM.Size = new System.Drawing.Size(46, 13);
-			this.lblBGM.TabIndex = 14;
-			this.lblBGM.Text = "- BGM -";
 			// 
 			// lnkBrowse
 			// 
@@ -222,6 +212,7 @@
 			this.btnStart.TabIndex = 17;
 			this.btnStart.Text = "Start";
 			this.btnStart.UseVisualStyleBackColor = true;
+			this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
 			// 
 			// txtSSP
 			// 
@@ -230,9 +221,9 @@
 			this.txtSSP.BackColor = System.Drawing.Color.Black;
 			this.txtSSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.txtSSP.ForeColor = System.Drawing.Color.White;
-			this.txtSSP.Location = new System.Drawing.Point(117, 324);
+			this.txtSSP.Location = new System.Drawing.Point(162, 324);
 			this.txtSSP.Name = "txtSSP";
-			this.txtSSP.Size = new System.Drawing.Size(180, 22);
+			this.txtSSP.Size = new System.Drawing.Size(135, 22);
 			this.txtSSP.TabIndex = 18;
 			this.txtSSP.Text = "\\ba.ssp";
 			// 
@@ -250,6 +241,28 @@
 			this.lnkSSP.VisitedLinkColor = System.Drawing.Color.Black;
 			this.lnkSSP.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSSP_LinkClicked);
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.Color.Transparent;
+			this.label1.ForeColor = System.Drawing.Color.White;
+			this.label1.Location = new System.Drawing.Point(110, 298);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(46, 13);
+			this.label1.TabIndex = 20;
+			this.label1.Text = "- BGM -";
+			// 
+			// lblBGM
+			// 
+			this.lblBGM.AutoSize = true;
+			this.lblBGM.BackColor = System.Drawing.Color.Transparent;
+			this.lblBGM.ForeColor = System.Drawing.Color.White;
+			this.lblBGM.Location = new System.Drawing.Point(114, 326);
+			this.lblBGM.Name = "lblBGM";
+			this.lblBGM.Size = new System.Drawing.Size(39, 13);
+			this.lblBGM.TabIndex = 21;
+			this.lblBGM.Text = "- SSP -";
+			// 
 			// frmSetup
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,12 +270,13 @@
 			this.BackgroundImage = global::BadApple.Properties.Resources.BadApple_Background;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.ClientSize = new System.Drawing.Size(593, 450);
+			this.Controls.Add(this.lblBGM);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.lnkSSP);
 			this.Controls.Add(this.txtSSP);
 			this.Controls.Add(this.btnStart);
 			this.Controls.Add(this.lnkTest);
 			this.Controls.Add(this.lnkBrowse);
-			this.Controls.Add(this.lblBGM);
 			this.Controls.Add(this.txtPath);
 			this.Controls.Add(this.cbShowTskBar);
 			this.Controls.Add(this.cbFullScr);
@@ -297,13 +311,14 @@
         private System.Windows.Forms.CheckBox cbTransBack;
         private System.Windows.Forms.CheckBox cbFullScr;
         private System.Windows.Forms.CheckBox cbShowTskBar;
-        private System.Windows.Forms.TextBox txtPath;
-        private System.Windows.Forms.Label lblBGM;
+		private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.LinkLabel lnkBrowse;
         private System.Windows.Forms.LinkLabel lnkTest;
         private System.Windows.Forms.Button btnStart;
 		private System.Windows.Forms.TextBox txtSSP;
 		private System.Windows.Forms.LinkLabel lnkSSP;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblBGM;
     }
 }
 

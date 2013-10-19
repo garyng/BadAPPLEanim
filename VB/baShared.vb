@@ -4,6 +4,7 @@ Public Class baShared
 	Public Shared AlwaysOnTop As Boolean
 	Public Shared UseBitBlt As Boolean
 	Public Shared TransBg, FullScreen, ShowTaskbar As Boolean
+
 	Public Shared BGM As New MCIMedia("baBGM")
 
 	Public Shared Reader As SSPReader

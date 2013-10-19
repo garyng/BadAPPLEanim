@@ -50,13 +50,24 @@
     <Compile Include="frmSetup.Designer.cs">
       <DependentUpon>frmSetup.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStandard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStandard.Designer.cs">
+      <DependentUpon>frmStandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvalidSSPException.cs" />
     <Compile Include="MCIMedia.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SharedFuncs.cs" />
+    <Compile Include="Publics.cs" />
+    <Compile Include="SSPReader.cs" />
     <Compile Include="Win32API.cs" />
     <EmbeddedResource Include="frmSetup.resx">
       <DependentUpon>frmSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStandard.resx">
+      <DependentUpon>frmStandard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

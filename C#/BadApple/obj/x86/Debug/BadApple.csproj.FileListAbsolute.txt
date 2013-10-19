@@ -17,3 +17,4 @@ D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.csp
 D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.frmSetup.resources
 D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.Properties.Resources.resources
 D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.csproj.GenerateResource.Cache
+D:\Users\GaryNg-Win7\Desktop\BadAPPLEanim\C#\BadApple\obj\x86\Debug\BadApple.frmStandard.resources
